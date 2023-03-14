@@ -30,6 +30,7 @@ const SendNotification = async (pushToken, title, body, data) => {
 
   try {
     const ticketChunk = await expo.sendPushNotificationsAsync(chunk);
+    console.log(ticketChunk);
   } catch (error) {
     console.error(error);
   }
@@ -39,13 +40,17 @@ const SendNotification = async (pushToken, title, body, data) => {
 const SendTestNotification = () => {
 
   SendNotification(
-    'ExponentPushToken[ZeNN1xHXaxNE3Nl0NBQxMT]',
+    'ExponentPushToken[wHdXSQOT8aU0HPJBJEPwLx]',
     'Scheduled notification',
     'Hello smoggy! you should receive this notification when heroku runs its script :)',
     {}
   )
 
+  console.log('test notification sent!');
+
 }
+
+// SendTestNotification();
 
 const SendScenarioNotifications = async (campId, creatorId, creatorName, storyTitle) => {
 
